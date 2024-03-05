@@ -41,17 +41,48 @@ console.log("supply changes:", supplyChanges);
 //      - If the value is a negative number, push it into the 'negatives' array.
 //      - If the value is a zero, push it into the 'zeroes' array.
 console.log('6. Looping through supplyChanges to populate arrays with positive, negative, and zero values:');
+let positives = [];
+let negatives = [];
+let zeroes = [];
 
-
-
-
+for (let i = 0; i<supplyChanges.length; i++) {
+  if (supplyChanges[i] > 0) {
+    positives.push(supplyChanges[i]);
+  } else if (supplyChanges[i] < 0) {
+    negatives.push(supplyChanges[i]);
+  } else if (supplyChanges[i] === 0) {
+    zeroes.push(supplyChanges[i]);
+  } else {
+    console.log("this is not a valid number") // error handling; expected that this will not trigger.
+  }
+}
+console.log("positives:", positives.length, positives);
+console.log("negatives:", negatives.length, negatives);
+console.log("zeroes:", zeroes.length, zeroes);
 // ***** STRETCH GOALS *********************************************
 // 7. Rewrite the 'for' loop from #6 as a 'for...of' loop. Instead of 'positives',
 //    'negatives', and 'zeroes', create three new arrays named 'stretchPositives',
 //    'stretchNegatives', and 'stretchZeroes'. 
 console.log('7. Looping through supplyChanges to populate more arrays with positive, negative, and zero values:');
 
-
+let stretchPositives = [];
+let stretchNegatives = [];
+let stretchZeroes = []
+for (change of supplyChanges){
+  if (change > 0) {
+    stretchPositives.push(change);
+  } else if (change < 0) {
+    stretchNegatives.push(change);
+  } else if (change === 0) {
+    stretchZeroes.push(change);
+  } else {
+    //error handling; this condition should not trigger.
+    "I can't do that Dave; it's not a number."
+  }
+}
+console.log("stretch positives:", stretchPositives.length, stretchPositives);
+console.log("stretch negatives:", stretchNegatives.length, stretchNegatives);
+console.log("stretch zeroes:", stretchZeroes.length, stretchZeroes);
 // 8. Create a variable called 'totalParts' and assign it a value of 0.
 //    Then, write a loop that adds each value of the 'supplyChanges'
 //    array to the 'totalParts' variable.
