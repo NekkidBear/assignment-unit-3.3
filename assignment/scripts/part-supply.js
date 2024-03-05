@@ -107,6 +107,17 @@ for (part of supplyChanges) {
 //    how many boxes were filled.
 console.log('9. Filling boxes with a "while" loop');
 
+let parts = 572;
+let boxesFilled = 0;
+console.log("Starting parts:", parts);
+console.log("Expected boxes:", Math.floor(parts/7));
+console.log("Expected leftovers:", parts%7);
+while (parts>=7) {
+  boxesFilled +=1;
+  parts-=7;
+}
+console.log("Boxes filled:", boxesFilled);
+console.log("Leftover parts:", parts)
 
 
 
